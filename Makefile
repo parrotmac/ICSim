@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-I/usr/include/SDL2
+CFLAGS=-I/usr/include
 LDFLAGS=-lSDL2 -lSDL2_image
 
 all: icsim controls
@@ -11,7 +11,7 @@ controls: controls.o
 	$(CC) $(CFLAGS) -o controls controls.c $(LDFLAGS)
 
 lib.o:
-	$(CC) lib.c
+	$(CC) -c lib.c
 
 clean:
 	rm -rf icsim controls icsim.o controls.o
